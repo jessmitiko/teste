@@ -56,3 +56,11 @@ var icons = {
     yellow: goldIcon,
     grey: greyIcon
 }
+
+var locations = JSON.parse(
+    `&lt;?= ${JSON.stringify(values)} ?&gt;`
+)
+
+for (loc of locations) {
+    var marker = L.marker([loc.lat, loc.lng], { icon: icons[loc.color || 'grey'] }).addTo(map);
+}
